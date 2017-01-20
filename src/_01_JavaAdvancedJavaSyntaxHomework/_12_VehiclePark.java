@@ -8,7 +8,7 @@ public class _12_VehiclePark {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        ArrayList<String> carToSell = new ArrayList<>(Arrays.asList(scanner.nextLine().split(" ")));
+        ArrayList<String> carToSell = new ArrayList<>(Arrays.asList(scanner.nextLine().split("\\s+")));
         String input = scanner.nextLine();
         int soldVe = 0;
         while (!input.equals("End of customers!")) {
@@ -23,16 +23,17 @@ public class _12_VehiclePark {
                 carToSell.remove(whereToFind);
                 soldVe++;
             } else System.out.println("No");
-            input=scanner.nextLine();
+            input = scanner.nextLine();
         }
         StringBuilder carLeft = new StringBuilder();
-        for (String s : carToSell)
-        {
-            carLeft.append(s);
-            carLeft.append(", ");
-        }
+        if (carToSell.size() > 0) {
+            for (String s : carToSell) {
+                carLeft.append(s);
+                carLeft.append(", ");
+            }
+        } else carLeft.append(", ");
 
-        System.out.println("Vehicles left: " + carLeft.subSequence(0,carLeft.length()-2));
+            System.out.println("Vehicles left: " + carLeft.subSequence(0, carLeft.length() - 2));
         System.out.printf("Vehicles sold: %d", soldVe);
     }
 }
