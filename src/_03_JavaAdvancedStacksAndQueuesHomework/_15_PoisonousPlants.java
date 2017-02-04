@@ -1,5 +1,5 @@
 package _03_JavaAdvancedStacksAndQueuesHomework;
-
+//Only 88/100 points
 import java.util.*;
 
 public class _15_PoisonousPlants {
